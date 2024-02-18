@@ -1,1 +1,49 @@
-<p>country-page works!</p>
+
+<ng-template  #loading>
+    <div class="alert alert-danger text-center">
+        Espere por favor...
+    </div>
+</ng-template>
+
+<div *ngIf="country; else loading">
+    <div class="row">
+        <div class="col-12">
+            <h2>Pais: <strong>
+                {{ country?.name?.common }}
+            </strong>
+        </h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <img
+                [src]="country?.flags?.png"
+                alt="flag"
+                style="width: 100%;">
+        </div>
+        <div class="col-8">
+            <ul class="list-group
+                list-group-flush">
+                <li class="list-group
+                    list-group-item">
+                    <strong>Nombre:</strong>
+                    {{ country.name.common }}
+                </li>
+                <li class="list-group
+                    list-group-item">
+                    <strong>Poblacion:</strong>
+                    {{ country.population | number }}
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        
+    </div>
+
+
+</div>
