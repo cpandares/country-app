@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'shared-app-contact',
   template: `
     <p>
       contact works!
@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent {
+export class ContactPageComponent {
 
 }
