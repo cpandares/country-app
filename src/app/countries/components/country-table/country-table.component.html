@@ -1,0 +1,47 @@
+
+
+
+<div 
+    *ngIf="countries.length === 0; else table"
+    class="alert alert-warning text-center">
+    No hay resultados
+</div>
+
+
+<ng-template #table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Bandera</th>
+                <th>País</th>
+                <th>Capital</th>
+                <th>Población</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of countries; let i = index">
+                <td>{{ i }}</td>
+                <td>
+                    <img 
+                        [src]="country.flags.png" 
+                        alt="flag"
+                        style="width: 50px;">
+                </td>
+                <td>{{ country.name.common }}</td>
+                <td>{{ country.capital }}</td>
+                <td>
+                    {{ country.population | number}} Habitantes
+                </td>
+                <td>
+                    <a 
+                        href="#"
+                        >
+                        Ver más
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

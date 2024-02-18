@@ -1,1 +1,29 @@
-<p>by-country-page works!</p>
+
+<h2>Por Nombre</h2>
+
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- search box -->
+       <shared-search-box
+        (onValue)="searchByCountry($event)"
+        ></shared-search-box>
+    </div>
+   
+   
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <!-- resultados -->
+        <!-- <ul>
+            <li *ngFor="let country of countries">
+                {{ country.capital }} - {{ country.population }}
+            </li>
+        </ul> -->
+        <countries-table [countries] = "countries"></countries-table>
+    </div>
+</div>
